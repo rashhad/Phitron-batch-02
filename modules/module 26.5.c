@@ -7,9 +7,45 @@
 double circle_ar(int r);
 int main()
 {
-    solve6();
+    solve9();
     return 0;
 }
+
+void solve9(void)
+{
+    int t, n, m,b;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int top;
+        scanf("%d",&n);
+        int a[n];
+        for(int i = 0; i<n; i++)
+            scanf("%d",&a[i]);
+        scanf("%d",&m);
+        top = 0;
+        for(int i=0; i<m; i++)
+        {
+            scanf("%d",&b);
+            top = (top+b)%n;
+        }
+        printf("%d\n",a[top]);
+    }
+}
+void solve8(void)
+{
+    int t,n;
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%d",&n);
+        if(n%10==9)
+            printf("%d\n",n/10+1);
+        else
+            printf("%d\n",n/10);
+    }
+}
+
 
 void solve1(void)
 {
@@ -21,23 +57,25 @@ void solve1(void)
 }
 void solve2(void)
 {
-    int n; scanf("%d",&n);
+    int n;
+    scanf("%d",&n);
     int a[n];
 
     for(int i = 0; i<n; i++)
         scanf("%d",&a[i]);
     for(int i = 0; i<n-1; i++)
-        for(int j = 0; j<n-1-i;j++)
+        for(int j = 0; j<n-1-i; j++)
             if(a[j]>a[j+1])
-    {
-        swapp(&a[j],&a[j+1]);
-    }
+            {
+                swapp(&a[j],&a[j+1]);
+            }
     print_arr(a,n);
 }
 
 void solve3(void)
 {
-    int n; scanf("%d",&n);
+    int n;
+    scanf("%d",&n);
     int a[n];
     for(int i = 0; i<n; i++)
         scanf("%d",&a[i]);
@@ -45,12 +83,14 @@ void solve3(void)
 }
 void solve4(void)
 {
-    int n; scanf("%d",&n);
+    int n;
+    scanf("%d",&n);
     printf("%lf sqm",circle_ar(n));
 }
 void solve5(void)
 {
-    int n; scanf("%d",&n);
+    int n;
+    scanf("%d",&n);
     int a[n];
     for(int i = 0; i<n; i++)
         scanf("%d",&a[i]);
